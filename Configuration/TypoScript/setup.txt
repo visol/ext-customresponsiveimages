@@ -1,0 +1,445 @@
+# Remove CSS from css_styled_content
+plugin.tx_cssstyledcontent._CSS_DEFAULT_STYLE >
+
+plugin.tx_customresponsiveimages {
+
+	# Height ratio for gallery images
+	galleryAspectRatio = 0.666666
+
+	# If no maximum width for a colPos is defined, fall back to this maximum width
+	fallbackWidth = 1000
+
+	colPosWidths {
+		default {
+			0 = 1000
+			1 = 262
+			2 = 262
+			# Add additional colPos maximum widths like that
+			# 99 = 999
+		}
+		galleryDefault < .default
+		medium {
+			0 = 936
+			1 = 936
+			2 = 777
+			# Add additional colPos maximum widths like that
+			# 99 = 999
+		}
+		galleryMedium < .medium
+		small {
+			0 = 353
+			1 = 990
+			2 = 777
+			# Add additional colPos maximum widths like that
+			# 99 = 999
+		}
+		gallerySmall < .small
+	}
+
+	widthFactorByImageorient {
+		# above text
+		100 = 1
+		101 = 0.5
+		102 {
+			default = 0.3333
+			# on a small device, maximum width is 1/2
+			small = 0.5
+		}
+		103 {
+			default = 0.25
+			# on a small device, maximum width is 1/2
+			small = 0.5
+		}
+
+		# below text
+		110 = 1
+		111 = 0.5
+		112 {
+			default = 0.3333
+			# on a small device, maximum width is 1/2
+			small = 0.5
+		}
+		113 {
+			default = 0.25
+			# on a small device, maximum width is 1/2
+			small = 0.5
+		}
+
+		# in text
+		120 = 0.5
+		121 {
+			default = 0.3333
+			# on a small device, maximum width is 1/2
+			small = 0.5
+		}
+		122 {
+			default = 0.25
+			# on a small device, maximum width is 1/2
+			small = 0.5
+		}
+		123 {
+			default = 0.125
+			# on a small device, maximum width is 1/2
+			small = 0.5
+		}
+		130 = 0.5
+		131 {
+			default = 0.3333
+			# on a small device, maximum width is 1/2
+			small = 0.5
+		}
+		132 {
+			default = 0.25
+			# on a small device, maximum width is 1/2
+			small = 0.5
+		}
+		133 {
+			default = 0.125
+			# on a small device, maximum width is 1/2
+			small = 0.5
+		}
+
+		# below text
+		140 = 0.5
+		141 {
+			default = 0.3333
+			# on a small device, maximum width is 1/2
+			small = 0.5
+		}
+		142 {
+			default = 0.25
+			# on a small device, maximum width is 1/2
+			small = 0.5
+		}
+		143 {
+			default = 0.125
+			# on a small device, maximum width is 1/2
+			small = 0.5
+		}
+		150 = 0.5
+		151 {
+			default = 0.3333
+			# on a small device, maximum width is 1/2
+			small = 0.5
+		}
+		152 {
+			default = 0.25
+			# on a small device, maximum width is 1/2
+			small = 0.5
+		}
+		153 {
+			default = 0.125
+			# on a small device, maximum width is 1/2
+			small = 0.5
+		}
+
+		# gallery
+		160 = 0.5
+		161 {
+			default = 0.3333
+			# on a small device, maximum width is 1/2
+			small = 0.5
+		}
+		162 {
+			default = 0.25
+			# on a small device, maximum width is 1/2
+			small = 0.5
+		}
+		163 {
+			default = 0.125
+			# on a small device, maximum width is 1/2
+			small = 0.5
+		}
+	}
+
+	# Set to "c" for a configuration if image should be cropped using the cropAspectRatio to ensure all images have the same format
+	cropConfiguration {
+		160 = c
+		161 = c
+		162 = c
+		163 = c
+	}
+}
+
+# *****************
+# CType: image
+# *****************
+tt_content.image.20 {
+	layout = CASE
+	layout {
+		key.field = imageorient
+
+		# above-center
+		default >
+		default = TEXT
+		default {
+			value = <div class="csc-textpic csc-textpic-responsive csc-textpic-center csc-textpic-above###CLASSES###">###IMAGES######TEXT###</div>
+		}
+
+		# TYPO3 defaults
+		1 >
+		2 >
+		8 >
+		9 >
+		10 >
+		17 >
+		18 >
+		25 >
+		26 >
+
+		# abovetext
+		100 = TEXT
+		100.value = <div class="csc-textpic csc-textpic-responsive csc-textpic-abovetext csc-textpic-100###CLASSES###">###IMAGES######TEXT###</div>
+
+		101 = TEXT
+		101.value = <div class="csc-textpic csc-textpic-responsive csc-textpic-abovetext csc-textpic-50###CLASSES###">###IMAGES######TEXT###</div>
+
+		102 = TEXT
+		102.value = <div class="csc-textpic csc-textpic-responsive csc-textpic-abovetext csc-textpic-33###CLASSES###">###IMAGES######TEXT###</div>
+
+		103 = TEXT
+		103.value = <div class="csc-textpic csc-textpic-responsive csc-textpic-abovetext csc-textpic-25###CLASSES###">###IMAGES######TEXT###</div>
+
+		# belowtext
+		110 = TEXT
+		110.value = <div class="csc-textpic csc-textpic-responsive csc-textpic-belowtext csc-textpic-100###CLASSES###">###IMAGES######TEXT###</div>
+
+		111 = TEXT
+		111.value = <div class="csc-textpic csc-textpic-responsive csc-textpic-belowtext csc-textpic-50###CLASSES###">###IMAGES######TEXT###</div>
+
+		112 = TEXT
+		112.value = <div class="csc-textpic csc-textpic-responsive csc-textpic-belowtext csc-textpic-33###CLASSES###">###IMAGES######TEXT###</div>
+
+		113 = TEXT
+		113.value = <div class="csc-textpic csc-textpic-responsive csc-textpic-belowtext csc-textpic-25###CLASSES###">###IMAGES######TEXT###</div>
+
+		# intext, left
+		120 = TEXT
+		120.value = <div class="csc-textpic csc-textpic-responsive csc-textpic-intext-left csc-textpic-50###CLASSES###">###IMAGES######TEXT###</div>
+
+		121 = TEXT
+		121.value = <div class="csc-textpic csc-textpic-responsive csc-textpic-intext-left csc-textpic-33###CLASSES###">###IMAGES######TEXT###</div>
+
+		122 = TEXT
+		122.value = <div class="csc-textpic csc-textpic-responsive csc-textpic-intext-left csc-textpic-25###CLASSES###">###IMAGES######TEXT###</div>
+
+		123 = TEXT
+		123.value = <div class="csc-textpic csc-textpic-responsive csc-textpic-intext-left csc-textpic-12###CLASSES###">###IMAGES######TEXT###</div>
+
+		# intext, right
+		130 = TEXT
+		130.value = <div class="csc-textpic csc-textpic-responsive csc-textpic-intext-right csc-textpic-50###CLASSES###">###IMAGES######TEXT###</div>
+
+		131 = TEXT
+		131.value = <div class="csc-textpic csc-textpic-responsive csc-textpic-intext-right csc-textpic-33###CLASSES###">###IMAGES######TEXT###</div>
+
+		132 = TEXT
+		132.value = <div class="csc-textpic csc-textpic-responsive csc-textpic-intext-right csc-textpic-25###CLASSES###">###IMAGES######TEXT###</div>
+
+		133 = TEXT
+		133.value = <div class="csc-textpic csc-textpic-responsive csc-textpic-intext-right csc-textpic-12###CLASSES###">###IMAGES######TEXT###</div>
+
+		# besidetext, left
+		140 = TEXT
+		140.value = <div class="csc-textpic csc-textpic-responsive csc-textpic-besidetext-left csc-textpic-50###CLASSES###">###IMAGES######TEXT###</div>
+
+		141 = TEXT
+		141.value = <div class="csc-textpic csc-textpic-responsive csc-textpic-besidetext-left csc-textpic-33###CLASSES###">###IMAGES######TEXT###</div>
+
+		142 = TEXT
+		142.value = <div class="csc-textpic csc-textpic-responsive csc-textpic-besidetext-left csc-textpic-25###CLASSES###">###IMAGES######TEXT###</div>
+
+		143 = TEXT
+		143.value = <div class="csc-textpic csc-textpic-responsive csc-textpic-besidetext-left csc-textpic-12###CLASSES###">###IMAGES######TEXT###</div>
+
+		# besidetext, right
+		150 = TEXT
+		150.value = <div class="csc-textpic csc-textpic-responsive csc-textpic-besidetext-right csc-textpic-50###CLASSES###">###IMAGES######TEXT###</div>
+
+		151 = TEXT
+		151.value = <div class="csc-textpic csc-textpic-responsive csc-textpic-besidetext-right csc-textpic-33###CLASSES###">###IMAGES######TEXT###</div>
+
+		152 = TEXT
+		152.value = <div class="csc-textpic csc-textpic-responsive csc-textpic-besidetext-right csc-textpic-25###CLASSES###">###IMAGES######TEXT###</div>
+
+		153 = TEXT
+		153.value = <div class="csc-textpic csc-textpic-responsive csc-textpic-besidetext-right csc-textpic-12###CLASSES###">###IMAGES######TEXT###</div>
+
+		# gallery
+		160 = TEXT
+		160.value = <div class="csc-textpic csc-textpic-responsive csc-textpic-gallery csc-textpic-gallery-2###CLASSES###">###IMAGES######TEXT###</div>
+
+		161 = TEXT
+		161.value = <div class="csc-textpic csc-textpic-responsive csc-textpic-gallery csc-textpic-gallery-3###CLASSES###">###IMAGES######TEXT###</div>
+
+		162 = TEXT
+		162.value = <div class="csc-textpic csc-textpic-responsive csc-textpic-gallery csc-textpic-gallery-4###CLASSES###">###IMAGES######TEXT###</div>
+
+		163 = TEXT
+		163.value = <div class="csc-textpic csc-textpic-responsive csc-textpic-gallery csc-textpic-gallery-6###CLASSES###">###IMAGES######TEXT###</div>
+	}
+
+	# disable wrapping for columns and rows, all styles are applied in CSS
+	rendering {
+		noCaption {
+			rowStdWrap.wrap = |
+			noRowsStdWrap.wrap = |
+			lastRowStdWrap.wrap = |
+			columnStdWrap.wrap = |
+		}
+		splitCaption {
+			rowStdWrap.wrap = |
+			noRowsStdWrap.wrap = |
+			lastRowStdWrap.wrap = |
+			columnStdWrap.wrap = |
+		}
+		singleNoCaption {
+			rowStdWrap.wrap = |
+			noRowsStdWrap.wrap = |
+			lastRowStdWrap.wrap = |
+			columnStdWrap.wrap = |
+		}
+		singleCaption {
+			rowStdWrap.wrap = |
+			noRowsStdWrap.wrap = |
+			lastRowStdWrap.wrap = |
+			columnStdWrap.wrap = |
+		}
+	}
+
+	imageColumnStdWrap.dataWrap = |
+
+	1 {
+		layoutKey = picturefill
+		layout.picturefill {
+			element (
+				<picture>
+					###SOURCECOLLECTION###
+					<img srcset="###SRC###" ###PARAMS### ###ALTPARAMS######SELFCLOSINGTAGSLASH### />
+				</picture>
+			)
+			source = <source srcset="###SRC###" media="###MEDIAQUERY###" />
+		}
+
+		sourceCollection >
+		sourceCollection {
+			default {
+				maxW.cObject = USER
+				maxW.cObject.userFunc = Visol\Customresponsiveimages\Hook\Images->getImageWidth
+				maxW.cObject.userFunc {
+					collection = TEXT
+					collection.value = default
+
+					colPos = TEXT
+					colPos.field = colPos
+
+					imageorient = TEXT
+					imageorient.field = imageorient
+				}
+
+				# Don't apply this configuration to galleries
+				if {
+					isInList.field = imageorient
+					value = 160,161,162,163
+					negate = 1
+				}
+			}
+
+			default.mediaQuery = (min-width: 991px)
+			defaultRetina < .default
+
+			defaultRetina.pixelDensity = 2
+			defaultRetina.mediaQuery := appendString( AND (min-device-pixel-ratio: 2))
+
+			middle < .default
+			middle.maxW.cObject.userFunc.collection.value = middle
+			middle.mediaQuery = (min-width: 415px) AND (max-width: 991px)
+			middleRetina < .middle
+			middleRetina.pixelDensity = 2
+			middleRetina.mediaQuery := appendString( AND (min-device-pixel-ratio: 2))
+
+			small < .default
+			small.maxW.cObject.userFunc.collection.value = small
+			small.mediaQuery = (max-width: 414px)
+			smallRetina < .small
+			smallRetina.pixelDensity = 2
+			smallRetina.mediaQuery := appendString( AND (min-device-pixel-ratio: 2))
+
+			galleryDefault < .default
+			galleryDefault {
+				width < .maxW
+				width.cObject.userFunc = Visol\Customresponsiveimages\Hook\Images->getCroppedImageWidth
+
+				if {
+					negate >
+				}
+
+				maxW < .width
+				minW < .width
+				height < .width
+				height.cObject.userFunc = Visol\Customresponsiveimages\Hook\Images->getCroppedImageHeight
+				maxH < .height
+				minH < .height
+			}
+
+			galleryDefault.mediaQuery < .desktop.mediaQuery
+			galleryDefaultRetina < .galleryDefault
+
+			galleryDefaultRetina.pixelDensity = 2
+			galleryDefaultRetina.mediaQuery < .desktopRetina.mediaQuery
+
+			galleryMiddle < .galleryDefault
+			galleryMiddle {
+				width.cObject.userFunc.collection.value = middle
+				height.cObject.userFunc.collection.value < .width.cObject.userFunc.collection.value
+				maxW < .width
+				minW < .width
+				maxH < .height
+				minH < .height
+			}
+			galleryMiddle.mediaQuery < .middle.mediaQuery
+			galleryMiddleRetina < .galleryMiddle
+			galleryMiddleRetina.pixelDensity = 2
+			galleryMiddleRetina.mediaQuery < .middleRetina.mediaQuery
+
+			gallerySmall < .galleryDefault
+			gallerySmall {
+				width.cObject.userFunc.collection.value = small
+				height.cObject.userFunc.collection.value < .width.cObject.userFunc.collection.value
+				maxW < .width
+				minW < .width
+				maxH < .height
+				minH < .height
+			}
+			gallerySmall.mediaQuery < .small.mediaQuery
+			gallerySmallRetina < .gallerySmall
+			gallerySmallRetina.pixelDensity = 2
+			gallerySmallRetina.mediaQuery < .smallRetina.mediaQuery
+		}
+
+	}
+}
+# *****************
+# CType: textpic
+# *****************
+tt_content.textpic >
+tt_content.textpic = COA
+tt_content.textpic {
+	10 = COA
+	#10.if.value = 120
+	#10.if.isLessThan.field = imageorient
+	10.10 = < lib.stdheader
+
+	20 =< tt_content.image.20
+	20 {
+		#text.10 = COA
+		#text.10 {
+		#    if.value = 119
+		#    if.isGreaterThan.field = imageorient
+		#    10 = < lib.stdheader
+		#    10.stdWrap.dataWrap = <div class="csc-textpicHeader csc-textpicHeader-{field:imageorient}">|</div>
+		#}
+		text.20 =< tt_content.text.20
+		text.wrap = <div class="csc-textpic-text">|</div>
+	}
+}

@@ -1,0 +1,2 @@
+# cat=basic/100; type=boolean; label=LLL:EXT:customresponsiveimages/Resources/Private/Language/locallang.xlf:em.enableDefaultConfiguration
+enableDefaultConfiguration = 1
