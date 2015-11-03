@@ -11,5 +11,5 @@ if ((bool)$extensionConfiguration['enableDefaultConfiguration']) {
 	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:customresponsiveimages/Resources/Private/TSConfig/PageTSConfig/default.ts">');
 	unset($GLOBALS['TCA']['tt_content']['columns']['imageorient']['config']['items']);
 	$GLOBALS['TCA']['tt_content']['columns']['imageorient']['config']['itemsProcFunc'] =
-		'Visol\Customresponsiveimages\Hook\ImageorientItemsProcFunc->setImageorientItems';
+		'Visol\\Customresponsiveimages\\Hook\\ImageorientItemsProcFunc->setImageorientItems';
 }
