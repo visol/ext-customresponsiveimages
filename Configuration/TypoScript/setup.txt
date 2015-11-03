@@ -146,7 +146,7 @@ plugin.tx_customresponsiveimages {
 			small = 0.5
 		}
 		163 {
-			default = 0.125
+			default = 0.1666
 			# on a small device, maximum width is 1/2
 			small = 0.5
 		}
