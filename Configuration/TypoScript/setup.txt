@@ -202,16 +202,16 @@ tt_content.image.20 {
 
 		# belowtext
 		110 = TEXT
-		110.value = <div class="csc-textpic csc-textpic-responsive csc-textpic-belowtext csc-textpic-100###CLASSES###">###IMAGES######TEXT###</div>
+		110.value = <div class="csc-textpic csc-textpic-responsive csc-textpic-belowtext csc-textpic-100###CLASSES###">###TEXT######IMAGES###</div>
 
 		111 = TEXT
-		111.value = <div class="csc-textpic csc-textpic-responsive csc-textpic-belowtext csc-textpic-50###CLASSES###">###IMAGES######TEXT###</div>
+		111.value = <div class="csc-textpic csc-textpic-responsive csc-textpic-belowtext csc-textpic-50###CLASSES###">###TEXT######IMAGES###</div>
 
 		112 = TEXT
-		112.value = <div class="csc-textpic csc-textpic-responsive csc-textpic-belowtext csc-textpic-33###CLASSES###">###IMAGES######TEXT###</div>
+		112.value = <div class="csc-textpic csc-textpic-responsive csc-textpic-belowtext csc-textpic-33###CLASSES###">###TEXT######IMAGES###</div>
 
 		113 = TEXT
-		113.value = <div class="csc-textpic csc-textpic-responsive csc-textpic-belowtext csc-textpic-25###CLASSES###">###IMAGES######TEXT###</div>
+		113.value = <div class="csc-textpic csc-textpic-responsive csc-textpic-belowtext csc-textpic-25###CLASSES###">###TEXT######IMAGES###</div>
 
 		# intext, left
 		120 = TEXT
