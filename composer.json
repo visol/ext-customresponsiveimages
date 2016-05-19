@@ -4,7 +4,7 @@
 	"description": "Custom responsive images",
 	"homepage": "https://github.com/visol/ext-customresponsiveimages",
 	"license": ["GPL-2.0+"],
-	"version": "1.0.2",
+	"version": "1.0.4",
 	"require": {
 		"typo3/cms-core": ">6.2.0"
 	},
