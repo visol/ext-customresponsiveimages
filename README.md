@@ -80,7 +80,7 @@ For galleries, you will most likely have the thumbnails with identical sizes. Th
 
 The thumbnail width is determined the same way normal images are. The thumbnail height is determined by the ```galleryAspectRatio``` configuration. It is set to 0.666666 (2/3) by default. If you want e.g. square thumbnails, you can set it to 1.
 
-Most likely, you will want to crop the thubnails instead of squashing them. Therefore, you can set the ```cropConfiguration``` for these styles. So if you want to crop thubnails for all default gallery types, you can just use the default:
+Most likely, you will want to crop the thumbnails instead of squashing them. Therefore, you can set the ```cropConfiguration``` for these styles. So if you want to crop thubnails for all default gallery types, you can just use the default:
 
 
     plugin.tx_customresponsiveimages {
@@ -98,6 +98,10 @@ Most likely, you will want to crop the thubnails instead of squashing them. Ther
 * Each gallery image will have a width of 200px.
 * Because the aspectRatio is set to 0.66666 by default and the cropConfiguration is set, your thumbnails will be cropped and have 200*132 pixels size.
 
+**Hint:**
+
+If the ```galleryAspectRatio``` is set to 0, the images in the gallery maintain their original proportions and the cropConfiguration is ignored.
+
 Drawbacks
 ----------
 
@@ -113,4 +117,4 @@ Credits
 
 Developed by visol digitale Dienstleistungen GmbH, www.visol.ch
 
-Uses the ```<picture>``` tag for responsive image rendering and the pictureFill solution at https://github.com/scottjehl/picturefill.
+Uses the ```<picture>``` tag for responsive image rendering and the pictureFill solution at https://github.com/scottjehl/picturefill (version 3).

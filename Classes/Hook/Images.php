@@ -124,7 +124,12 @@ class Images {
 	 */
 	public function getCroppedImageHeight($content = '', $conf = Array()) {
 		$width = $this->getImageWidth($content, $conf);
-		$croppedImageHeight = floor($width * $this->galleryAspectRatio) . $this->getCropValue($conf);
+        if ($this->galleryAspectRatio > 0) {
+            $croppedImageHeight = floor($width * $this->galleryAspectRatio) . $this->getCropValue($conf);
+        } else {
+            // If the galleryAspectRatio is 0, this means we want original proportions, so we return 0 as height
+            $croppedImageHeight = 0;
+        }
 		return $croppedImageHeight;
 	}
 
