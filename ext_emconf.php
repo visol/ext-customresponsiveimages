@@ -11,24 +11,22 @@
  ***************************************************************/
 
 $EM_CONF[$_EXTKEY] = array(
-	'title' => 'Custom Responsive Images',
-	'description' => 'Configurable backend and frontend implementation of the responsive image handling.',
-	'category' => 'fe',
-	'author' => 'Lorenz Ulrich',
-	'author_email' => 'lorenz.ulrich@visol.ch',
-	'state' => 'beta',
-	'internal' => '',
-	'uploadfolder' => '0',
-	'createDirs' => '',
-	'clearCacheOnLoad' => 0,
-	'version' => '2.0.0-dev',
-	'constraints' => array(
-		'depends' => array(
-			'typo3' => '8.7.0-8.7.99',
-		),
-		'conflicts' => array(
-		),
-		'suggests' => array(
-		),
-	),
+    'title' => 'Custom Responsive Images',
+    'description' => 'Configurable backend and frontend implementation of the responsive image handling.',
+    'category' => 'fe',
+    'author' => 'Lorenz Ulrich',
+    'author_email' => 'lorenz.ulrich@visol.ch',
+    'state' => 'beta',
+    'internal' => '',
+    'uploadfolder' => '0',
+    'createDirs' => '',
+    'clearCacheOnLoad' => 0,
+    'version' => '2.0.0-dev',
+    'constraints' => array(
+        'depends' => array(
+            'typo3' => '8.7.0-8.7.99',
+        ),
+        'conflicts' => array(),
+        'suggests' => array(),
+    ),
 );

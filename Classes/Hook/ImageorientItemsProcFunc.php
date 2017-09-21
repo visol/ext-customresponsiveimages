@@ -1,4 +1,5 @@
 <?php
+
 namespace Visol\Customresponsiveimages\Hook;
 
 /**
@@ -20,49 +21,52 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 /**
  * Add additional items to the tt_content imageorient
  *
- * @author	Lorenz Ulrich <lorenz.ulrich@visol.ch>
- * @package	TYPO3
- * @subpackage	tx_customresponsiveimages
+ * @author    Lorenz Ulrich <lorenz.ulrich@visol.ch>
+ * @package    TYPO3
+ * @subpackage    tx_customresponsiveimages
  */
-class ImageorientItemsProcFunc {
+class ImageorientItemsProcFunc
+{
 
-	/**
-	 * @param $imageorientConfig
-	 * @return array
-	 */
-	public function setImageorientItems(&$imageorientConfig) {
-		$pageTsConfig = BackendUtility::getPagesTSconfig(GeneralUtility::_GET('id'));
-		$pageTsConfig = GeneralUtility::removeDotsFromTS($pageTsConfig);
+    /**
+     * @param $imageorientConfig
+     * @return array
+     */
+    public function setImageorientItems(&$imageorientConfig)
+    {
+        $pageTsConfig = BackendUtility::getPagesTSconfig(GeneralUtility::_GET('id'));
+        $pageTsConfig = GeneralUtility::removeDotsFromTS($pageTsConfig);
 
-		if (array_key_exists('tx_customresponsiveimages', $pageTsConfig)) {
-			$responsiveImageConfiguration = $pageTsConfig['tx_customresponsiveimages'];
-		} else {
-			$responsiveImageConfiguration = [];
-		}
+        if (array_key_exists('tx_customresponsiveimages', $pageTsConfig)) {
+            $responsiveImageConfiguration = $pageTsConfig['tx_customresponsiveimages'];
+        } else {
+            $responsiveImageConfiguration = [];
+        }
 
-		$groupedItems = [];
-		$i = 0;
-		foreach ($responsiveImageConfiguration['items'] as $imageorient => $item) {
-			$groupedItems[$item['group']][$i][] = $GLOBALS['LANG']->sL($item['label']);
-			$groupedItems[$item['group']][$i][] = $imageorient;
-			$groupedItems[$item['group']][$i][] = array_key_exists('icon', $item) && !empty($item['icon']) ? $responsiveImageConfiguration['seliconsPath'] . $item['icon'] : NULL;
-			$i++;
-		}
+        $groupedItems = [];
+        $i = 0;
+        foreach ($responsiveImageConfiguration['items'] as $imageorient => $item) {
+            $groupedItems[$item['group']][$i][] = $GLOBALS['LANG']->sL($item['label']);
+            $groupedItems[$item['group']][$i][] = $imageorient;
+            $groupedItems[$item['group']][$i][] = array_key_exists('icon',
+                $item) && !empty($item['icon']) ? $responsiveImageConfiguration['seliconsPath'] . $item['icon'] : null;
+            $i++;
+        }
 
-		$imageOrientItems = [];
-		foreach ($responsiveImageConfiguration['groups'] as $groupName => $group) {
-			if (array_key_exists('label', $group) && !empty($group['label'])) {
-				$imageOrientItems[] = array($GLOBALS['LANG']->sL($group['label']), '--div--');
-			}
-			if (array_key_exists($groupName, $groupedItems)) {
-				foreach ($groupedItems[$groupName] as $item) {
-					array_push($imageOrientItems, $item);
-				}
-			}
+        $imageOrientItems = [];
+        foreach ($responsiveImageConfiguration['groups'] as $groupName => $group) {
+            if (array_key_exists('label', $group) && !empty($group['label'])) {
+                $imageOrientItems[] = array($GLOBALS['LANG']->sL($group['label']), '--div--');
+            }
+            if (array_key_exists($groupName, $groupedItems)) {
+                foreach ($groupedItems[$groupName] as $item) {
+                    array_push($imageOrientItems, $item);
+                }
+            }
 
-		}
+        }
 
-		$imageorientConfig['items'] = $imageOrientItems;
-	}
+        $imageorientConfig['items'] = $imageOrientItems;
+    }
 
 }
