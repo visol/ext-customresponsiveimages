@@ -81,7 +81,7 @@ class Images {
 	 * @param array $conf
 	 * @return string
 	 */
-	public function getImageWidth($content = '', $conf = Array()) {
+	public function getImageWidth($content = '', $conf = []) {
 		$conf = $conf['userFunc.'];
 
 		$this->buildCollectionsFromConfiguration();
@@ -107,7 +107,7 @@ class Images {
 	 * @param array $conf
 	 * @return string
 	 */
-	public function getCroppedImageWidth($content = '', $conf = Array()) {
+	public function getCroppedImageWidth($content = '', $conf = []) {
 		$width = $this->getImageWidth($content, $conf);
 		$croppedImageWidth = floor($width) . $this->getCropValue($conf);
 		return $croppedImageWidth;
@@ -122,7 +122,7 @@ class Images {
 	 * @param array $conf
 	 * @return string
 	 */
-	public function getCroppedImageHeight($content = '', $conf = Array()) {
+	public function getCroppedImageHeight($content = '', $conf = []) {
 		$width = $this->getImageWidth($content, $conf);
         if ($this->galleryAspectRatio > 0) {
             $croppedImageHeight = floor($width * $this->galleryAspectRatio) . $this->getCropValue($conf);

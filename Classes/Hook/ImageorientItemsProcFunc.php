@@ -37,10 +37,10 @@ class ImageorientItemsProcFunc {
 		if (array_key_exists('tx_customresponsiveimages', $pageTsConfig)) {
 			$responsiveImageConfiguration = $pageTsConfig['tx_customresponsiveimages'];
 		} else {
-			$responsiveImageConfiguration = array();
+			$responsiveImageConfiguration = [];
 		}
 
-		$groupedItems = array();
+		$groupedItems = [];
 		$i = 0;
 		foreach ($responsiveImageConfiguration['items'] as $imageorient => $item) {
 			$groupedItems[$item['group']][$i][] = $GLOBALS['LANG']->sL($item['label']);
@@ -49,7 +49,7 @@ class ImageorientItemsProcFunc {
 			$i++;
 		}
 
-		$imageOrientItems = array();
+		$imageOrientItems = [];
 		foreach ($responsiveImageConfiguration['groups'] as $groupName => $group) {
 			if (array_key_exists('label', $group) && !empty($group['label'])) {
 				$imageOrientItems[] = array($GLOBALS['LANG']->sL($group['label']), '--div--');
