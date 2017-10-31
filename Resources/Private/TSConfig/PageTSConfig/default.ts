@@ -13,7 +13,7 @@ TCEFORM.tt_content {
 }
 
 tx_customresponsiveimages {
-	seliconsPath = ../typo3conf/ext/customresponsiveimages/Resources/Public/Icons/selicons/
+	seliconsPath = EXT:customresponsiveimages/Resources/Public/Icons/selicons/
 	groups {
 		abovetext {
 			# Empty label means that there will be no optgroup
