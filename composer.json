@@ -23,7 +23,7 @@
 	"homepage": "https://github.com/visol/ext-customresponsiveimages",
 	"license": ["GPL-2.0+"],
 	"require": {
-		"typo3/cms-core": ">8.7.0,<8.7.99"
+		"typo3/cms-core": "^10.4.7"
 	},
 	"autoload": {
 		"psr-4": {
